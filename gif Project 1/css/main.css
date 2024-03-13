@@ -1,0 +1,49 @@
+.gifheader{
+	text-align: center;
+	color: deeppink;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+	width: 80%;
+	max-width: 1024px;
+	margin: 0 auto;
+	background-image: url("../images/bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.container-padding50 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.container-textinput {
+	width: 88%;
+	display: inline-block;
+	padding: 20px;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+}
+
+.container-button {
+	/* width: 10%; */
+	display: inline-block;
+	padding: 20px;
+	background-color: green;
+	color: white;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+	cursor: pointer;
+	border: 1px solid green;
+	border-radius: 5px;
+}
+
+.showimg{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 15px;
+	border: 2px dotted black;
+	padding:  1rem;
+	margin: 1rem 0;
+}

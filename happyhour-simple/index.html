@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Happy Hour App - How about a drink!?">
+		<meta name="keywords" content="happy hour, drink, beers">
+
+		<title>Happy Hour</title>
+		
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script>
+
+
+			var name = prompt("What's your name?");
+
+			var cars=[
+				'BMW',
+				'PORCHE',
+				'SUPRA'
+			]
+
+			var carimages=[
+				'images/bmw.jpg',
+				'images/porche.jpg',
+				'images/supra.jpg',
+			]
+
+
+
+			carsnum = Math.floor(Math.random()*cars.length);
+			car = cars[carsnum];
+
+			if(name.toLowerCase()==="likhan"){
+				document.write("<h1>Congrats " +name+". You've won a "+car+ "</h1>");
+				document.write("<img src="+carimages[carsnum]+">");
+			}
+			else if(name.toLowerCase()==="chris"){
+				document.write("<h1>Congrats " +name+". You've won a "+car+ "</h1>");
+				document.write("<img src="+carimages[carsnum]+">");
+			}
+			else{
+				document.write("<h1>Hello "+name+"</h1>");
+			}
+
+		</script>
+	</head>
+	<body>
+		<!-- PAGE CONTENT WILL BE PRINTED HERE --> 
+		
+	</body>
+</html>

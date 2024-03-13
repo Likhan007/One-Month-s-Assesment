@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rock Paper Scessors</title>
+</head>
+
+<body>
+
+    <div class="show-winner">
+        <h1 id="show-winner-text">/h1>
+    </div>
+
+    <h1 class="header" style="text-align: center;">MONITOR A ROCK PAPER SCESSOR COMPETITION</strong> </h1>
+
+    <button onclick="inccount()">PLAY</button>
+
+    <div class="show">
+        <img id="player1Img" src="">
+        <img id="player2Img" src="">
+    </div>
+
+    <div class="counter">
+        <h2>Score Board : <br><br></h2>
+        <h3 id="matchcount"></h3>
+        <h3 id="matchnum"></h3>
+        <h3 id="p1"></h3>
+        <h3 id="p2"></h3>
+    </div>
+
+
+
+
+    <script>
+        var match_count = 0;
+        var p1 = 0;
+        var p2 = 0;
+        var draw = 0;
+        var elements = [
+            'rock',
+            'paper',
+            'scessors'
+        ]
+        var img = [
+            'images/rock.jpg',
+            'images/paper.jpg',
+            'images/scessors.jpg',
+        ]
+        var counter = document.getElementById("counter");
+
+        function inccount() {
+
+            var rand1 = Math.floor(Math.random() * 3);
+            var rand2 = Math.floor(Math.random() * 3);
+
+            var player1 = elements[rand1];
+            var player2 = elements[rand2];
+
+            document.getElementById("player1Img").src = img[rand1];
+            document.getElementById("player2Img").src = img[rand2];
+
+            if ((player1 == "rock" && player2 == "scessors") || (player1 == "paper" && player2 == "rock") || (player1 == "scessors" && player2 == "paper")) {
+                p1 += 1;
+            }
+            else if ((player2 == "rock" && player1 == "scessors") || (player2 == "paper" && player1 == "rock") || (player2 == "scessors" && player1 == "paper")) {
+                p2 += 1;
+            }
+            else {
+                // console.log("NO BODY WON"+p1,p2);
+                draw += 1;
+            }
+            match_count += 1;
+
+            var showScore = document.getElementById("matchcount");
+            var showScore0 = document.getElementById("matchnum");
+            var showScore1 = document.getElementById("p1");
+            var showScore2 = document.getElementById("p2");
+
+            showScore.innerHTML = "Match Count : &nbsp&nbsp&nbsp&nbsp" + match_count;
+            showScore0.innerHTML = "Draw : &nbsp&nbsp&nbsp&nbsp" + draw;
+            showScore1.innerHTML = "Player 1 : &nbsp&nbsp&nbsp&nbsp" + p1;
+            showScore2.innerHTML = "Player 2 : &nbsp&nbsp&nbsp&nbsp" + p2;
+
+            // TO SHOW THE WINNER
+
+            var show_winner = document.getElementsByClassName("show-winner")[0];
+            var show_winner_text = document.getElementById("show-winner-text");
+
+            if (p1 == 5 || p2 == 5) {
+                show_winner.style.display = "flex";
+
+                document.getElementsByTagName("button")[0].style.display = "none";
+                document.getElementsByClassName("show")[0].style.display = "none";
+
+                if (p1 == 5) {
+                    show_winner_text.innerHTML = "THE WINNER IS PLAYER 1";
+                }
+                else {
+                    show_winner_text.innerHTML = "THE WINNER IS PLAYER 2";
+                }
+
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
